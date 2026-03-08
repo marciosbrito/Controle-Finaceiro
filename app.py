@@ -3,7 +3,7 @@ import pandas as pd
 from datetime import datetime
 import os
 
-ARQUIVO = "dados/financeiro.xlsx"
+ARQUIVO = "Financeiro.xlsx"
 
 COLUNAS = [
 "NR","QTD","TIPO","DESCRIÇÃO","VALOR","DATA VENC",
@@ -193,5 +193,6 @@ if menu == "Registrar Rendimento":
 if menu == "Lista de Contas":
 
     st.header("Contas registradas")
+
 
     st.dataframe(df)
