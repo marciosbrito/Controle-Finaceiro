@@ -63,6 +63,11 @@ meses = df["MES"].dropna().unique()
 
 if len(meses) > 0:
     mes_sel = st.selectbox("Mês", meses)
+else:
+    mes_sel = None
+
+# definir df_mes
+if mes_sel:
     df_mes = df[df["MES"] == mes_sel]
 else:
     df_mes = df
@@ -137,7 +142,6 @@ df_valid = df[
 # converter para número
 df_valid["MES_NUM"] = df_valid["MES"].str.replace("-", "").astype(int)
 
-mes_atual_num = int(str(mes_sel).replace("-", ""))
 
 # mostra pendentes de TODOS os meses
 pendentes = df_valid[
